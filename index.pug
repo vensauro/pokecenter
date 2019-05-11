@@ -8,20 +8,33 @@ html(lang="pt-br")
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		meta(name="description", content="Pokémons são incriveis, veja o porque!!")
 		title= pageName
 		link(rel="stylesheet", href="./assets/style/style.scss")
 	body
 		header.navigationbar
-			h1= pageName
+			h1
+				a(href="#").navigationbar__title= pageName
+
+			input(type="checkbox")#button--control.navigationbar__button--control
+			label(for="button--control").navigationbar__button--control
+			label(for="button--control").navigationbar__button--close
+
 			nav.navigationbar__nav
 				ul.navigationbar__list
 					each value in navSections
-						li= value
-		main
+						li.navigationbar__list__item
+							a(href="#" + value)= value
 
-		footer
-			section
-				ul
-					each value in contactValue
-						li= value
-			section
+		.document
+			main.contentBody
+				each value in navSections
+					section(id="#" + value)
+
+			footer.pagefooter
+				section
+					ul
+						each value in contactValue
+							li= value
+				section
+	

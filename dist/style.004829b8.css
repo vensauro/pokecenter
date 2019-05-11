@@ -1,8 +1,115 @@
+.img-wrapper {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.inner-img {
+  transition: 0.3s;
+}
+
+.inner-img:hover {
+  transform: scale(1.1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+.document {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contentBody {
+  flex: auto;
+}
+
+.pagefooter {
+  flex-shrink: 0;
+  height: 40vh;
+  background: url("/footer.891a2a81.jpg");
+  filter: brightness(0.4) blur(1px) grayscale(50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navigationbar {
+  height: 30vh;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  color: #e74c3c;
+  justify-content: space-between;
+  align-items: center;
+  background: #2980b9;
+  border: 10px;
+}
+.navigationbar__title {
+  filter: none;
+  text-decoration: none;
+  color: #e74c3c;
+}
+.navigationbar__nav {
+  align-self: flex-end;
+}
+.navigationbar__list {
+  display: flex;
+  list-style: none;
+  color: #ecf0f1;
+}
+.navigationbar__list__item {
+  margin: 0 10px;
+  text-decoration: none;
+}
+.navigationbar__button--control {
+  visibility: hidden;
+  position: absolute;
+  left: -9999;
+  opacity: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .navigationbar__button--control {
+    right: 20px;
+    top: 20px;
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+    border: solid #333;
+    border-width: 3px 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .navigationbar__button--control:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #333;
+  }
+  .navigationbar__button--control:checked ~ .navigationbar__button--control--close {
+    transform: translate(0, 0);
+  }
+  .navigationbar__button--control:checked ~ nav {
+    transform: translate(0, 0);
+  }
+  .navigationbar__button--close {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 500ms ease;
+    transform: translate(100%, 0);
+  }
 }
 
 /*# sourceMappingURL=/style.004829b8.css.map */
