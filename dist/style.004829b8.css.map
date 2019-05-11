@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets\\style\\style.scss"],"names":[],"mappings":"AAAA;EACC;EACA;EACA;EACA","file":"style.004829b8.css","sourceRoot":"..","sourcesContent":["* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n\tscroll-behavior: smooth;\n}\n\n"]}

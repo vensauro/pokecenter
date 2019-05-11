@@ -1,0 +1,22 @@
+{
+  "name": "training-html-css",
+  "version": "1.0.0",
+  "description": "Repositório para atividade trainee de HTML e CSS",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.pug --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:InfoJrUFBA/projetos/internos/Pluginfo/Trainee/2019-1/training-html-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "pug": "^2.0.3",
+    "sass": "^1.20.1"
+  }
+}

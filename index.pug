@@ -1,0 +1,27 @@
+- var pageName = 'Pokémon Center'
+- var navSections = ['Sobre', 'Conhecimentos', 'Projetos', 'Contato', 'Menu']
+- var contactValue = ['Numero: ']
+
+doctype html
+html(lang="pt-br")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title= pageName
+		link(rel="stylesheet", href="./assets/style/style.scss")
+	body
+		header.navigationbar
+			h1= pageName
+			nav.navigationbar__nav
+				ul.navigationbar__list
+					each value in navSections
+						li= value
+		main
+
+		footer
+			section
+				ul
+					each value in contactValue
+						li= value
+			section
