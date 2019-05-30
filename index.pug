@@ -1,5 +1,5 @@
 - var pageName = 'Pokémon Center'
-- var navSections = ['Sobre', 'Conhecimentos', 'Projetos', 'Contato', 'Menu']
+- var navSections = ['Sobre', 'Conhecimentos', 'Projetos', 'Contato']
 - var contactValue = ['Numero: ']
 
 doctype html
@@ -11,30 +11,38 @@ html(lang="pt-br")
 		meta(name="description", content="Pokémons são incriveis, veja o porque!!")
 		title= pageName
 		link(rel="stylesheet", href="./assets/style/style.scss")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Kanit&display=swap")
 	body
 		header.navigationbar
-			h1
-				a(href="#").navigationbar__title= pageName
+			img(src="./assets/img/cloud1.svg", alt="").navigationbar__cloud
+			img(src="./assets/img/cloud2.svg", alt="").navigationbar__cloud
+			img(src="./assets/img/cloud3.svg", alt="").navigationbar__cloud
+			img(src="./assets/img/cloud1.svg", alt="").navigationbar__cloud
+			img(src="./assets/img/cloud2.svg", alt="").navigationbar__cloud
+			img(src="./assets/img/cloud3.svg", alt="").navigationbar__cloud
 
-			input(type="checkbox")#button--control.navigationbar__button--control
-			label(for="button--control").navigationbar__button--control
-			label(for="button--control").navigationbar__button--close
+			.navigationbar__img-wrapper
+				img(src="./assets/img/centerTop.svg", alt="menu central da pagina").navigationbar__img
+				img(src="./assets/img/pokeball.svg", alt="botao em formato de pokebola no menu da pagina").navigationbar__pokeball
 
 			nav.navigationbar__nav
 				ul.navigationbar__list
 					each value in navSections
-						li.navigationbar__list__item
-							a(href="#" + value)= value
+						li
+							a(href="#" + value).navigationbar__list__item= value
+				
+			.navigationbar__pokemon
 
 		.document
-			main.contentBody
+			main.content-body
 				each value in navSections
 					section(id="#" + value)
 
-			footer.pagefooter
-				section
-					ul
-						each value in contactValue
-							li= value
-				section
-	
+		footer.page-footer
+			section
+				ul
+					each value in contactValue
+						li= value
+			section
+
+		script(src="./assets/js/index.js")

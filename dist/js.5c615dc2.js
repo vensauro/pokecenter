@@ -117,79 +117,39 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"assets/style/style.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"/home/ivensauro/workspace/training-html-css/assets/img/footer.jpg":[["footer.891a2a81.jpg","assets/img/footer.jpg"],"assets/img/footer.jpg"],"_css_loader":"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"assets/js/index.js":[function(require,module,exports) {
+document.querySelectorAll(".navigationbar__list__item").forEach(function (button) {
+  button.addEventListener("click", function (event) {
+    document.querySelector(".navigationbar__pokeball").animate([{
+      transform: "rotate(0)"
+    }, {
+      transform: "rotate(360deg) "
+    }], {
+      duration: 400,
+      easing: "ease-in-out"
+    });
+  });
+});
+fetch("https://pokeapi.co/api/v2/pokemon/".concat(Math.floor(Math.random() * 807))).then(function (res) {
+  return res.json();
+}).then(function (res) {
+  var name = document.createElement("div");
+  name.classList.add(".navigationbar__pokemon__name");
+  name.innerText = res.name;
+  var sprite = document.createElement("img");
+  sprite.classList.add(".navigationbar__pokemon__sprite");
+  sprite.src = res.sprites.front_default;
+  sprite.addEventListener("mouseenter", function (event) {
+    sprite.src = res.sprites.back_default;
+  });
+  sprite.addEventListener("mouseleave", function (event) {
+    sprite.src = res.sprites.front_default;
+  });
+  document.querySelector(".navigationbar__pokemon").appendChild(sprite);
+  document.querySelector(".navigationbar__pokemon").appendChild(name);
+  console.log(res);
+});
+},{}],"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -392,5 +352,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style.004829b8.js.map
+},{}]},{},["../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/js/index.js"], null)
+//# sourceMappingURL=/js.5c615dc2.js.map

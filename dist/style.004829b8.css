@@ -1,22 +1,21 @@
-.img-wrapper {
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
-}
-
-.inner-img {
-  transition: 0.3s;
-}
-
-.inner-img:hover {
-  transform: scale(1.1);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: "Kanit", sans-serif;
+}
+
+.img-wrapper {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+.img-wrapper__img {
+  transition: 0.3s;
+}
+.img-wrapper__img:hover {
+  transform: scale(1.1);
 }
 
 .document {
@@ -25,11 +24,11 @@
   flex-direction: column;
 }
 
-.contentBody {
+.content-body {
   flex: auto;
 }
 
-.pagefooter {
+.page-footer {
   flex-shrink: 0;
   height: 40vh;
   background: url("/footer.891a2a81.jpg");
@@ -40,15 +39,78 @@
 }
 
 .navigationbar {
-  height: 30vh;
+  height: 50vh;
   width: 100%;
-  padding: 20px 0;
   display: flex;
-  color: #e74c3c;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
   background: #2980b9;
-  border: 10px;
+  color: #ecf0f1;
+}
+.navigationbar__cloud {
+  position: absolute;
+  height: 25%;
+}
+.navigationbar__cloud:nth-child(1) {
+  top: 0%;
+  animation: cloud 120s linear 0s infinite;
+}
+.navigationbar__cloud:nth-child(2) {
+  top: 15%;
+  left: -25%;
+  animation: cloud 120s linear 90s infinite;
+}
+.navigationbar__cloud:nth-child(3) {
+  top: 28%;
+  left: -25%;
+  animation: cloud 120s linear 8s infinite;
+}
+.navigationbar__cloud:nth-child(4) {
+  top: 0%;
+  left: -25%;
+  animation: cloud 120s linear 20s infinite;
+}
+.navigationbar__cloud:nth-child(5) {
+  top: 26%;
+  left: -25%;
+  animation: cloud 120s linear 40s infinite;
+}
+.navigationbar__cloud:nth-child(6) {
+  top: 19%;
+  left: -25%;
+  animation: cloud 120s linear 60s infinite;
+}
+@keyframes cloud {
+  from {
+    left: -25%;
+  }
+  to {
+    left: 100%;
+  }
+}
+.navigationbar__img-wrapper {
+  height: 45%;
+  border-radius: 5% 5% 0 0;
+  width: 100vw;
+  background: #be1e02ff;
+  display: flex;
+  justify-content: center;
+}
+.navigationbar__img {
+  position: relative;
+  top: -52%;
+  height: 150%;
+}
+.navigationbar__pokeball {
+  position: absolute;
+  height: 43%;
+  z-index: 2;
+  transition: all 0.4s ease-in-out;
+}
+.navigationbar__pokeball:hover {
+  transform: rotate(360deg);
 }
 .navigationbar__title {
   filter: none;
@@ -56,7 +118,11 @@
   color: #e74c3c;
 }
 .navigationbar__nav {
-  align-self: flex-end;
+  height: 45%;
+  position: absolute;
+  left: 2%;
+  display: flex;
+  align-items: center;
 }
 .navigationbar__list {
   display: flex;
@@ -64,52 +130,26 @@
   color: #ecf0f1;
 }
 .navigationbar__list__item {
+  border: solid #ecf0f1 2px;
+  border-radius: 20px;
+  padding: 0.5rem 0.7rem;
   margin: 0 10px;
   text-decoration: none;
+  color: #ecf0f1;
 }
-.navigationbar__button--control {
-  visibility: hidden;
+.navigationbar__list__item:hover {
+  background: #ecf0f1;
+  color: #e74c3c;
+}
+.navigationbar__pokemon {
+  height: 45%;
+  width: 20%;
   position: absolute;
-  left: -9999;
-  opacity: 0;
-}
-
-@media screen and (max-width: 767px) {
-  .navigationbar__button--control {
-    right: 20px;
-    top: 20px;
-    display: block;
-    width: 30px;
-    padding: 5px 0;
-    border: solid #333;
-    border-width: 3px 0;
-    z-index: 2;
-    cursor: pointer;
-  }
-  .navigationbar__button--control:before {
-    content: "";
-    display: block;
-    height: 3px;
-    background: #333;
-  }
-  .navigationbar__button--control:checked ~ .navigationbar__button--control--close {
-    transform: translate(0, 0);
-  }
-  .navigationbar__button--control:checked ~ nav {
-    transform: translate(0, 0);
-  }
-  .navigationbar__button--close {
-    position: fixed;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.4);
-    transition: all 500ms ease;
-    transform: translate(100%, 0);
-  }
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=/style.004829b8.css.map */
