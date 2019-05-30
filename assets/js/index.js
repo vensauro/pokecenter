@@ -1,5 +1,11 @@
 document.querySelectorAll(".navigationbar__list__item").forEach(button => {
   button.addEventListener("click", event => {
+    event.preventDefault();
+    window.setTimeout(() => {
+      document
+        .querySelector(button.attributes.href.value)
+        .scrollIntoView({ behavior: "smooth" });
+    }, 450);
     document
       .querySelector(".navigationbar__pokeball")
       .animate([{ transform: "rotate(0)" }, { transform: "rotate(360deg) " }], {
@@ -29,5 +35,5 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 807)}`)
     document.querySelector(".navigationbar__pokemon").appendChild(sprite);
     document.querySelector(".navigationbar__pokemon").appendChild(name);
 
-    console.log(res);
+    // console.log(res);
   });

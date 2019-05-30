@@ -120,6 +120,12 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"assets/js/index.js":[function(require,module,exports) {
 document.querySelectorAll(".navigationbar__list__item").forEach(function (button) {
   button.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.setTimeout(function () {
+      document.querySelector(button.attributes.href.value).scrollIntoView({
+        behavior: "smooth"
+      });
+    }, 450);
     document.querySelector(".navigationbar__pokeball").animate([{
       transform: "rotate(0)"
     }, {
@@ -146,8 +152,7 @@ fetch("https://pokeapi.co/api/v2/pokemon/".concat(Math.floor(Math.random() * 807
     sprite.src = res.sprites.front_default;
   });
   document.querySelector(".navigationbar__pokemon").appendChild(sprite);
-  document.querySelector(".navigationbar__pokemon").appendChild(name);
-  console.log(res);
+  document.querySelector(".navigationbar__pokemon").appendChild(name); // console.log(res);
 });
 },{}],"../../.config/versions/node/v12.2.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -177,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43131" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42033" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
