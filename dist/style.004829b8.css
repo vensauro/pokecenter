@@ -18,14 +18,13 @@
   transform: scale(1.1);
 }
 
-.document {
+.content-body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
-.content-body {
-  flex: auto;
+.content-body__section {
+  height: 50vh;
 }
 
 .page-footer {
@@ -112,11 +111,6 @@
 .navigationbar__pokeball:hover {
   transform: rotate(360deg);
 }
-.navigationbar__title {
-  filter: none;
-  text-decoration: none;
-  color: #e74c3c;
-}
 .navigationbar__nav {
   height: 45%;
   position: absolute;
@@ -150,6 +144,35 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media screen and (max-width: 1120px) {
+  .navigationbar {
+    height: 70vh;
+  }
+  .navigationbar__cloud {
+    height: 20%;
+  }
+  .navigationbar__img {
+    top: -40%;
+    height: 100%;
+  }
+  .navigationbar__pokeball {
+    height: 30%;
+  }
+  .navigationbar__pokemon {
+    justify-content: flex-start;
+  }
+  .navigationbar__nav {
+    height: 45%;
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=/style.004829b8.css.map */

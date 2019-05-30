@@ -28,14 +28,14 @@ $nav-height: 45%;
   }
 }
 
-.document {
+.content-body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
 
-.content-body {
-  flex: auto;
+  &__section {
+    height: 50vh;
+  }
 }
 
 .page-footer {
@@ -128,12 +128,6 @@ $nav-height: 45%;
     }
   }
 
-  &__title {
-    filter: none;
-    text-decoration: none;
-    color: $red;
-  }
-
   &__nav {
     height: $nav-height;
     position: absolute;
@@ -174,5 +168,36 @@ $nav-height: 45%;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1120px) {
+  .navigationbar {
+    height: 70vh;
+
+    &__cloud {
+      height: 20%;
+    }
+
+    &__img {
+      top: -40%;
+      height: 100%;
+    }
+
+    &__pokeball {
+      height: 30%;
+    }
+
+    &__pokemon {
+      justify-content: flex-start;
+    }
+
+    &__nav {
+      height: $nav-height;
+      position: absolute;
+      bottom: 4%;
+      left: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }

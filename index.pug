@@ -33,10 +33,10 @@ html(lang="pt-br")
 				
 			.navigationbar__pokemon
 
-		.document
-			main.content-body
-				each value in navSections
-					section(id="#" + value)
+		
+		main.content-body
+			each value in navSections
+				section(id=value).content-body__section
 
 		footer.page-footer
 			section
