@@ -296,6 +296,49 @@ $nav-height: 45%;
       width: 100%;
     }
   }
+
+  .page-footer {
+    &__img-link {
+      height: 20%;
+    }
+    &__window {
+      &:nth-child(1) {
+        left: 10%;
+      }
+      &:nth-child(3) {
+        left: 60%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .page-footer {
+    &__left-wall,
+    &__right-wall {
+      display: none;
+    }
+    &__img-link {
+      height: 15%;
+    }
+    &__letreiro {
+      left: 2%;
+    }
+    &__window {
+      &:nth-child(1) {
+        left: 5%;
+      }
+      &:nth-child(2) {
+        left: 25%;
+      }
+      &:nth-child(3) {
+        left: 55%;
+      }
+      &:nth-child(4) {
+        left: 75%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 440px) {
