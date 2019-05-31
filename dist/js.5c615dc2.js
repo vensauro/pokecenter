@@ -146,7 +146,7 @@ fetch("https://pokeapi.co/api/v2/pokemon/".concat(Math.floor(Math.random() * 807
   sprite.classList.add(".navigationbar__pokemon__sprite");
   sprite.src = res.sprites.front_default;
   sprite.addEventListener("mouseenter", function (event) {
-    sprite.src = res.sprites.back_default;
+    sprite.src = res.sprites.back_default || res.sprites.front_default;
   });
   sprite.addEventListener("mouseleave", function (event) {
     sprite.src = res.sprites.front_default;
@@ -182,7 +182,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42033" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40003" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -26,7 +26,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 807)}`)
     sprite.classList.add(".navigationbar__pokemon__sprite");
     sprite.src = res.sprites.front_default;
     sprite.addEventListener("mouseenter", event => {
-      sprite.src = res.sprites.back_default;
+      sprite.src = res.sprites.back_default || res.sprites.front_default;
     });
     sprite.addEventListener("mouseleave", event => {
       sprite.src = res.sprites.front_default;

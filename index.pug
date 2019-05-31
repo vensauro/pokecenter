@@ -25,13 +25,23 @@ html(lang="pt-br")
 				img(src="./assets/img/centerTop.svg", alt="menu central da pagina").navigationbar__img
 				img(src="./assets/img/pokeball.svg", alt="botao em formato de pokebola no menu da pagina").navigationbar__pokeball
 
+			.navigationbar__nav__pc
+				nav.navigationbar__nav
+					ul.navigationbar__list
+						each value in navSections
+							li
+								a(href="#" + value).navigationbar__list__item= value
+				
+			.navigationbar__pokemon
+
+		input(type="checkbox")#button.navigationbar__mobile-menu__button
+		label(for="button").navigationbar__mobile-menu__label Menu
+		.navigationbar__mobile-menu__content
 			nav.navigationbar__nav
 				ul.navigationbar__list
 					each value in navSections
-						li
+						li.navigationbar__list__item
 							a(href="#" + value).navigationbar__list__item= value
-				
-			.navigationbar__pokemon
 
 		
 		main.content-body

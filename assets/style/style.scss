@@ -132,6 +132,7 @@ $nav-height: 45%;
     height: $nav-height;
     position: absolute;
     left: 2%;
+    bottom: 0;
     display: flex;
     align-items: center;
   }
@@ -166,6 +167,18 @@ $nav-height: 45%;
     justify-content: center;
     flex-direction: column;
   }
+
+  &__mobile-menu {
+    &__button {
+      display: none;
+    }
+    &__label {
+      display: none;
+    }
+    &__content {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 1120px) {
@@ -191,13 +204,108 @@ $nav-height: 45%;
 
     &__nav {
       height: $nav-height;
-      position: absolute;
       bottom: 4%;
       left: 0;
-      display: flex;
       align-items: flex-end;
       justify-content: center;
       width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  $nav-height: 30%;
+  .navigationbar {
+    &__img-wrapper {
+      height: $nav-height;
+    }
+    &__pokemon {
+      height: $nav-height;
+    }
+    &__nav {
+      height: unset;
+      position: unset;
+      left: unset;
+      bottom: unset;
+      display: unset;
+      align-items: unset;
+      &__pc {
+        display: none;
+      }
+    }
+
+    &__list {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      background: $red;
+      color: $white;
+      &__item {
+        text-align: center;
+        width: 100%;
+        border: unset;
+        border-top: solid $red2 2px;
+        border-radius: unset;
+        padding: 1rem;
+        margin: unset;
+        text-decoration: unset;
+        color: unset;
+        &:hover {
+          background: $white;
+          color: $red2;
+        }
+      }
+    }
+
+    &__mobile-menu {
+      &__button {
+        display: none;
+        &:checked {
+          + .navigationbar__mobile-menu__label {
+            &::after {
+              transform: rotate(90deg);
+            }
+          }
+          ~ .navigationbar__mobile-menu__content {
+            overflow: unset;
+            height: 10rem;
+            max-height: 100vh;
+            padding: 1em;
+          }
+        }
+      }
+      &__label {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        background: $red;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          background: darken($red, 10%);
+        }
+        &::after {
+          content: "\276F";
+          width: 1em;
+          height: 1em;
+          text-align: center;
+          transition: all 0.35s;
+        }
+      }
+      &__content {
+        display: flex;
+        max-height: 0;
+        overflow: hidden;
+        position: relative;
+        color: $red;
+        transition: all 0.45s;
+      }
     }
   }
 }
