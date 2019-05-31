@@ -30,12 +30,93 @@
 
 .page-footer {
   flex-shrink: 0;
-  height: 40vh;
-  background: url("/footer.891a2a81.jpg");
-  filter: brightness(0.4) blur(1px) grayscale(50%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  background: #c4cfde;
+  position: relative;
+  overflow: hidden;
+}
+.page-footer__left-wall {
+  height: 100%;
+  transform: scaleX(-1);
+  z-index: 2;
+  position: absolute;
+  left: 0;
+}
+.page-footer__right-wall {
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+}
+.page-footer__center-wall {
+  z-index: 1;
+  left: 2%;
+  align-self: flex-end;
+  position: absolute;
+  height: 100%;
+  width: 90vw;
+  background: url("/wall3.38f9d8bc.svg");
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+.page-footer__door {
+  z-index: 3;
+  height: 35vh;
+  align-self: flex-end;
+}
+.page-footer__container {
+  z-index: 3;
+  width: 100%;
+  height: 60vh;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+.page-footer__container--wall {
+  z-index: unset;
+  width: 100vw;
+  justify-content: space-around;
+}
+.page-footer__container--window {
+  justify-content: space-around;
+}
+.page-footer__letreiro {
+  z-index: 3;
+  position: absolute;
+  left: 20%;
+  bottom: 30%;
+}
+.page-footer__personagens {
+  align-self: flex-end;
+  z-index: 3;
+  height: 46%;
+  margin-right: 2rem;
+}
+.page-footer__img-link {
+  height: 25%;
+}
+.page-footer__window {
+  z-index: 3;
+  position: absolute;
+  top: 15%;
+  height: 100%;
+}
+.page-footer__window:nth-child(1) {
+  left: 20%;
+}
+.page-footer__window:nth-child(2) {
+  left: 30%;
+}
+.page-footer__window:nth-child(3) {
+  left: 70%;
+}
+.page-footer__window:nth-child(4) {
+  left: 80%;
 }
 
 .navigationbar {

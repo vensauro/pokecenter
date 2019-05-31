@@ -40,12 +40,97 @@ $nav-height: 45%;
 
 .page-footer {
   flex-shrink: 0;
-  height: 40vh;
-  background: url("/assets/img/footer.jpg");
-  filter: brightness(0.4) blur(1px) grayscale(50%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  background: darken(#c4cfde, 0%);
+  position: relative;
+  overflow: hidden;
+
+  &__left-wall {
+    height: 100%;
+    transform: scaleX(-1);
+    z-index: 2;
+    position: absolute;
+    left: 0;
+  }
+  &__right-wall {
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+  }
+  &__center-wall {
+    z-index: 1;
+    left: 2%;
+    align-self: flex-end;
+    position: absolute;
+    height: 100%;
+    width: 90vw;
+    background: url("../img/pokecenterEnter/wall3.svg");
+    background-repeat: repeat-x;
+    background-size: contain;
+  }
+  &__door {
+    z-index: 3;
+    height: 35vh;
+    align-self: flex-end;
+  }
+  &__container {
+    z-index: 3;
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+
+    &--wall {
+      z-index: unset;
+      width: 100vw;
+      justify-content: space-around;
+    }
+
+    &--window {
+      justify-content: space-around;
+    }
+  }
+  &__letreiro {
+    z-index: 3;
+    position: absolute;
+    left: 20%;
+    bottom: 30%;
+  }
+  &__personagens {
+    align-self: flex-end;
+    z-index: 3;
+    height: 46%;
+    margin-right: 2rem;
+  }
+  &__img-link {
+    height: 25%;
+  }
+  &__window {
+    z-index: 3;
+    position: absolute;
+    top: 15%;
+    height: 100%;
+
+    &:nth-child(1) {
+      left: 20%;
+    }
+    &:nth-child(2) {
+      left: 30%;
+    }
+    &:nth-child(3) {
+      left: 70%;
+    }
+    &:nth-child(4) {
+      left: 80%;
+    }
+  }
 }
 
 .navigationbar {

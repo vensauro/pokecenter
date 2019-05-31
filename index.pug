@@ -14,6 +14,8 @@ html(lang="pt-br")
 		link(rel="stylesheet", href="./assets/style/style.scss")
 	body
 		header.navigationbar
+
+			//- nuvens
 			img(src="./assets/img/cloud1.svg", alt="nuvem para animação").navigationbar__cloud
 			img(src="./assets/img/cloud2.svg", alt="nuvem para animação").navigationbar__cloud
 			img(src="./assets/img/cloud3.svg", alt="nuvem para animação").navigationbar__cloud
@@ -21,10 +23,12 @@ html(lang="pt-br")
 			img(src="./assets/img/cloud2.svg", alt="nuvem para animação").navigationbar__cloud
 			img(src="./assets/img/cloud3.svg", alt="nuvem para animação").navigationbar__cloud
 
+			//- topo do pokecenter
 			.navigationbar__img-wrapper
 				img(src="./assets/img/centerTop.svg", alt="menu central da pagina").navigationbar__img
 				img(src="./assets/img/pokeball.svg", alt="botao em formato de pokebola no menu da pagina").navigationbar__pokeball
 
+			//- menu computador
 			.navigationbar__nav__pc
 				nav.navigationbar__nav
 					ul.navigationbar__list
@@ -32,8 +36,10 @@ html(lang="pt-br")
 							li
 								a(href="#" + value).navigationbar__list__item= value
 				
+			//- aonde aparece o pokemon aleatorio
 			.navigationbar__pokemon
 
+		//- menu mobile
 		input(type="checkbox")#button.navigationbar__mobile-menu__button
 		label(for="button").navigationbar__mobile-menu__label Menu
 		.navigationbar__mobile-menu__content
@@ -49,10 +55,25 @@ html(lang="pt-br")
 				section(id=value).content-body__section
 
 		footer.page-footer
-			section
-				ul
-					each value in contactValue
-						li= value
-			section
+			.page-footer__container--wall
+				img(src="./assets/img/pokecenterEnter/wall1.svg", alt="footer da pagina").page-footer__left-wall
+				img(src="./assets/img/pokecenterEnter/wall1.svg", alt="footer da pagina").page-footer__right-wall
+				.page-footer__center-wall
+			.page-footer__container
+				img(src="./assets/img/pokecenterEnter/letter.svg", alt="").page-footer__letreiro
+			.page-footer__container
+				img(src="./assets/img/pokecenterEnter/door.svg", alt="porta do footer").page-footer__door
+			.page-footer__container
+				img(src="./assets/img/pokecenterEnter/char.svg", alt="personagens").page-footer__personagens
+			.page-footer__container--window
+			
+				a(href="mailto:ivensjoris@infojr.com.br").page-footer__window
+					img(src="./assets/img/pokecenterEnter/window-gmail.svg", alt="").page-footer__img-link
+				a(href="https://github.com/SS-Cat/").page-footer__window
+					img(src="./assets/img/pokecenterEnter/window-github.svg", alt="").page-footer__img-link
+				a(href="https://www.instagram.com/ivensauro/").page-footer__window
+					img(src="./assets/img/pokecenterEnter/window-instagram.svg", alt="").page-footer__img-link
+				a(href="https://twitter.com/SSCat__").page-footer__window
+					img(src="./assets/img/pokecenterEnter/window-twitter.svg", alt="").page-footer__img-link
 
 		script(src="./assets/js/index.js")
