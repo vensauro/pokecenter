@@ -296,7 +296,9 @@ $nav-height: 45%;
       width: 100%;
     }
   }
+}
 
+@media screen and (max-width: 1150px) {
   .page-footer {
     &__img-link {
       height: 20%;
