@@ -40,6 +40,11 @@ $nav-height: 45%;
   justify-content: center;
   align-items: center;
   color: $white;
+
+  &__text {
+    margin: 2%;
+  }
+
   font: {
     font-family: "Pokemon Hollow", "Open Sans";
     size: 2em;
