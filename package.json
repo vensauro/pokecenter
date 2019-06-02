@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.pug",
-    "build": "parcel build index.pug",
+    "build": "rm -rf ./dist && parcel build index.pug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
