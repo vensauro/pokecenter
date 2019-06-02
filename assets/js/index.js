@@ -15,6 +15,10 @@ document.querySelectorAll(".navigationbar__list__item").forEach(button => {
   });
 });
 
+document.querySelector(".wip__close-button").addEventListener("click", () => {
+  document.querySelector(".wip").style.display = "none";
+});
+
 fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 807)}`)
   .then(res => res.json())
   .then(res => {
